@@ -8,3 +8,11 @@
   --green: #43AF49;
   --white: #FFFFFF;
 }
+
+.bg-contact {
+  background-image: url('../../public/contact.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Or 'contain' if you want to see the entire image */
+  background-position: center;
+}
