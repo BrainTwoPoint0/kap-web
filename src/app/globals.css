@@ -16,3 +16,19 @@
   /* Or 'contain' if you want to see the entire image */
   background-position: center;
 }
+
+.bg-home {
+  background-image: url('../../public/home-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Or 'contain' if you want to see the entire image */
+  background-position: center;
+}
+
+.bg-about {
+  background-image: url('../../public/about-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Or 'contain' if you want to see the entire image */
+  background-position: center;
+}

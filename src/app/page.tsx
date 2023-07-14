@@ -1,10 +1,13 @@
 import Image from 'next/image'
 import Navbar from './common/navbar'
+import Enquiries from './components/enquiries'
+import Header from './components/header'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <p>TEST</p>
+    <main>
+      <Header />
+      <Enquiries />
     </main>
   )
 }
