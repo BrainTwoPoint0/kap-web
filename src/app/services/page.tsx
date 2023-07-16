@@ -1,7 +1,12 @@
 import React from 'react'
+import Enquiries from '../components/enquiries'
+import Clients from '../components/clients'
 
 export default function page() {
     return (
-        <div>page</div>
+        <div>
+            <Clients />
+            <Enquiries />
+        </div>
     )
 }
