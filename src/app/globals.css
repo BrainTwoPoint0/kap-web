@@ -32,3 +32,12 @@
   /* Or 'contain' if you want to see the entire image */
   background-position: center;
 }
+
+
+.bg-services {
+  background-image: url('../../public/services-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Or 'contain' if you want to see the entire image */
+  background-position: center;
+}
