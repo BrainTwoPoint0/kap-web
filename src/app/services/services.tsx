@@ -1,7 +1,13 @@
+"use client"
+import Image from 'next/image';
 import { title } from 'process';
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function Services() {
+
+
+    const [modalContent, setModalContent] = useState({ title: "", description: "" });
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const services = [
         { 'title': 'Unlocking Sustainable and Impactful Investment Opportunities', 'description': "Investors, join us on an exciting investment journey where we harness the expertise of Kantar Advisory Partners 'KAP' to unlock your full investment potential. At KAP, we are dedicated to uncovering top sustainable and impact ful investment opportunities that align with your financial goals and values.\nWith our deep knowledge and insights, we identify investment prospects that not only generate strong returns but also create a positive impact on society and the environment. Our team diligently evaluates these opportunities, ensuring they meet our rigorous criteria for sustainability, impact, and financial viability. \nBy partnering with KAP, you gain access to our extensive network and resources, empowering you to make informed investment decisions. We provide comprehensive support throughout the investment process, offering expert guidance and analysis to help you navigate the dynamic investment landscape. \nTogether, we can make a difference. Through our collaborative efforts, we aim to drive positive change while achieving financial success. Join us at KAP and embark on an investment journey that not only delivers strong returns but also leaves a lasting positive impact on the world around us." },
@@ -11,6 +17,24 @@ export default function Services() {
         { 'title': 'Decarbonisation Roadmaps: Expert Guidance on the Path to a Sustainable Future', 'description': "Navigate your organization's journey towards decarbonisation with the expert guidance of Kantar Advisory Partners (KAP). We are committed to helping companies and governments develop and implement robust decarbonisation roadmaps that align with sustainability goals. \nDecarbonisation is a critical priority for companies and governments worldwide, driven by the urgent need to mitigate the impacts of climate change. With our deep industry knowledge and expertise, we assist in crafting tailored decarbonisation roadmaps that encompass both short-term and long-term objectives. We take into account the unique circumstances and goals of your organization, providing practical and innovative solutions that prioritize sustainability while maintaining operational ef ficiency. \nEmbark on your decarbonisation journey with KAP and empower your organization to make a meaningful impact. Let us guide you in developing and implementing robust decarbonisation roadmaps that align with your vision and values. Together, we can forge a path towards a sustainable future that benefits your organization, society, and the planet." }
 
     ]
+    const openModal = (service) => {
+        setModalContent(service);
+        setIsModalOpen(true);
+    }
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    }
+
+    const switchService = (direction) => {
+        let currentIndex = services.findIndex(service => service.title === modalContent.title);
+        if (direction === 'left') {
+            currentIndex = currentIndex === 0 ? services.length - 1 : currentIndex - 1;
+        } else {
+            currentIndex = currentIndex === services.length - 1 ? 0 : currentIndex + 1;
+        }
+        openModal(services[currentIndex]);
+    }
     return (
         <section className=" text-[var(--white)] backdrop-brightness-50 flex flex-col items-center p-8">
             <h1 className="text-4xl font-bold">Our Services</h1>
@@ -19,10 +43,37 @@ export default function Services() {
             <div className="flex flex-wrap space-x-8">
                 {services.map((service, index) => {
                     return (
-                        <div className="w-64 h-36 rounded-md outline outline-offset-2 outline-[var(--green)] flex justify-center items-center bg-black "><p className="text-center text-lg">{service.title}</p></div>
+                        <div className="w-64 h-36 rounded-md outline outline-offset-2 outline-[var(--green)] flex justify-center items-center bg-black "
+                            onClick={() => openModal(service)}
+                            key={index}>
+                            <p className="text-center text-lg">{service.title}</p>
+                        </div>
                     );
                 })}
             </div>
+            {isModalOpen &&
+                <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-80 z-50 flex justify-center items-center">
+
+                    <div className="fixed top-4 left-4">
+                        <button className="text-white bg-transparent text-2xl border-none opacity-90" onClick={closeModal}>X</button>
+                    </div>
+                    <div className="fixed left-3 top-1/2 transform -translate-y-1/2 text-5xl">
+                        <button onClick={() => switchService('left')}>&lt;</button>
+                    </div>
+                    <div className="fixed right-3 top-1/2 transform -translate-y-1/2 text-5xl">
+                        <button onClick={() => switchService('right')}>&gt;</button>
+                    </div>
+                    <div className="text-center flex flex-col items-center justify-center w-1/2 h-screen">
+                        <div className="h-24 w-24 relative"><Image alt="MBBC Logo" src="/services1.png" fill /></div>
+                        <h2 className="text-3xl font-bold mb-4 text-white">{modalContent.title}</h2>
+                        <p className="text-base text-white">{modalContent.description.split('\n').map((item, key) => {
+                            return <span key={key}>{item}<br /><br /></span>
+                        })}
+                        </p>
+                    </div>
+
+                </div>
+            }
         </section>
     )
 }
@@ -33,9 +84,9 @@ export default function Services() {
 // {services.map((service, index) => {
 //     return (
 //         <p>
-//             {service.description.split('\n').map((item, key) => {
-//                 return <span key={key}>{item}<br /><br /></span>
-//             })}
+// {service.description.split('\n').map((item, key) => {
+//     return <span key={key}>{item}<br /><br /></span>
+// })}
 //         </p>
 //     );
 // })}
