@@ -2,7 +2,7 @@ import React from 'react'
 import Enquiries from '../components/enquiries'
 import Map from '../components/map'
 
-export default function page() {
+export default function About() {
     return (
         <div>
             <div className="text-[var(--white)] text-center bg-about ">
