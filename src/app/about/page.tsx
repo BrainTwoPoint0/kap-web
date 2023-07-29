@@ -3,6 +3,7 @@ import Enquiries from '../components/enquiries'
 import Map from '../components/map'
 
 export default function About() {
+    const aspirations = ["Druve positive change", "Champion sustainable growth", "Empower businesses", "Promote ethical and impactful investing", "Make a positive impact on society and the environment", "Foster partnerships for sustainable development aligning with SDG17"];
     return (
         <div>
             <div className="text-[var(--white)] text-center bg-about ">
