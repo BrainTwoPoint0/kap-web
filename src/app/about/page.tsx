@@ -1,9 +1,29 @@
-import React from 'react'
+'use client'
+import React, { useState, useEffect } from 'react';
+import useTypewriter from 'react-typewriter-hook';
 import Enquiries from '../components/enquiries'
 import Map from '../components/map'
 
+const aspirations = [
+    "Drive positive change",
+    "Champion sustainable growth",
+    "Empower businesses",
+    "Promote ethical and impactful investing",
+    "Make a positive impact on society and the environment",
+    "Foster partnerships for sustainable development aligning with SDG17",
+];
+
 export default function About() {
-    const aspirations = ["Druve positive change", "Champion sustainable growth", "Empower businesses", "Promote ethical and impactful investing", "Make a positive impact on society and the environment", "Foster partnerships for sustainable development aligning with SDG17"];
+    const [index, setIndex] = useState(0);
+    const aspiration = useTypewriter(aspirations[index]);
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setIndex((index + 1) % aspirations.length);
+        }, 9000); // adjust timing as needed
+        return () => clearInterval(intervalId);
+    }, [index]);
+
     return (
         <div>
             <div className="text-[var(--white)] text-center bg-about ">
@@ -18,7 +38,10 @@ export default function About() {
                 </div>
             </div>
             <div className="bg-[var(--white)] text-[var(--green)] p-20">
-                <h1 className="text-4xl"><span className="font-bold ">We aspire to:</span> Drive positive change.</h1>
+                <h1 className="text-4xl">
+                    <span className="font-bold ">We aspire to:</span>{" "}
+                    {aspiration}
+                </h1>
             </div>
 
             <Map />

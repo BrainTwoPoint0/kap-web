@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Map() {
     return (
-        <div className="bg-[var(--dark-grey)] p-20 flex text-[var(--white)]">
+        <div className="bg-[var(--dark-grey)] p-20 flex  justify-center text-[var(--white)]">
             <div>
                 <h3 className="font-bold text-4xl text-[var(--white)]">Our Network</h3>
                 <br />
@@ -36,7 +36,7 @@ export default function Map() {
                 <br />
 
             </div>
-            <Image alt="KAP Logo" src="/map.svg" height={1000} width={1250} />
+            <Image alt="KAP Network Map" src="/map.svg" className="h-1/2" height={1000} width={1250} />
 
         </div>
     )
