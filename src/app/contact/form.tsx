@@ -1,90 +1,170 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 export default function Form() {
-
-    const [fullname, setFullname] = useState("");
-    const [email, setEmail] = useState("");
-    const [subject, setSubject] = useState("");
-    const [message, setMessage] = useState("");
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [companyName, setCompanyName] = useState('');
+    const [companyWebsite, setCompanyWebsite] = useState('');
+    const [email, setEmail] = useState('');
+    const [telephone, setTelephone] = useState('');
+    const [helpType, setHelpType] = useState('');
+    const [message, setMessage] = useState('');
 
     return (
-        <form className="flex flex-col px-8 py-8">
-            <h1 className="text-6xl font-bold text-[var(--green)]">
+        <form className="flex flex-col px-8 py-8 ">
+            <h1 className="text-4xl font-bold text-[var(--green)] text-center md:text-5xl">
                 Get In Touch With Us
             </h1>
 
+            <div className="flex flex-col md:flex-row justify-between mt-8 space-y-4 md:space-y-0 md:space-x-4">
+                <div className="w-full md:w-1/2">
+                    <label
+                        htmlFor="firstName"
+                        className="text-gray-500 font-light mb-4 dark:text-gray-50"
+                    >
+                        First Name
+                    </label>
+                    <input
+                        type="text"
+                        value={firstName}
+                        onChange={(e) => {
+                            setFirstName(e.target.value);
+                        }}
+                        name="firstName"
+                        className="w-full bg-white rounded-md py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
+                    />
+                </div>
+
+                <div className="w-full md:w-1/2">
+                    <label
+                        htmlFor="lastName"
+                        className="text-gray-500 font-light mb-4 dark:text-gray-50"
+                    >
+                        Last Name
+                    </label>
+                    <input
+                        type="text"
+                        value={lastName}
+                        onChange={(e) => {
+                            setLastName(e.target.value);
+                        }}
+                        name="lastName"
+                        className="w-full bg-white rounded-md py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
+                    />
+                </div>
+            </div>
+
+
+
+            <div className="flex flex-col md:flex-row justify-between mt-8 space-y-4 md:space-y-0 md:space-x-4">
+
+                <div className="w-full md:w-1/2">
+                    <label htmlFor="companyName" className="text-gray-500 font-light mb-4 dark:text-gray-50">
+                        Company Name
+                    </label>
+                    <input
+                        type="text"
+                        value={companyName}
+                        onChange={(e) => setCompanyName(e.target.value)}
+                        name="companyName"
+                        className="w-full bg-white rounded-md py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
+                    />
+                </div>
+
+
+                <div className="w-full md:w-1/2">
+                    <label htmlFor="companyWebsite" className="text-gray-500 font-light mb-4 dark:text-gray-50">
+                        Company Website (optional)
+                    </label>
+                    <input
+                        type="url"
+                        value={companyWebsite}
+                        onChange={(e) => setCompanyWebsite(e.target.value)}
+                        name="companyWebsite"
+                        className="w-full bg-white rounded-md py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
+                    />
+                </div>
+            </div>
+
+
+            <div className="flex flex-col md:flex-row justify-between mt-8 space-y-4 md:space-y-0 md:space-x-4">
+                <div className="w-full md:w-1/2">
+                    <label htmlFor="email" className="text-gray-500 font-light mb-4 dark:text-gray-50">
+                        E-Mail Address
+                    </label>
+                    <input
+                        type="text"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        name="email"
+                        className="w-full bg-white rounded-md py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
+                    />
+                </div>
+
+
+                <div className="w-full md:w-1/2">
+                    <label htmlFor="telephone" className="text-gray-500 font-light mb-4 dark:text-gray-50">
+                        Telephone Number (optional)
+                    </label>
+                    <input
+                        type="url"
+                        value={telephone}
+                        onChange={(e) => setTelephone(e.target.value)}
+                        name="telephone"
+                        className="w-full bg-white rounded-md py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
+                    />
+                </div>
+            </div>
+
+
+            <div className="mt-8">
+                <label htmlFor="helpType" className="text-gray-500 font-light mb-4 dark:text-gray-50">
+                    How can we help?
+                </label>
+                <select
+                    value={helpType}
+                    onChange={(e) => setHelpType(e.target.value)}
+                    name="helpType"
+                    className="w-full h-10 bg-white rounded-md py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
+                >
+                    <option value="">Select an option</option>
+                    <option value="Investment / fundraising">Investment / fundraising</option>
+                    <option value="Business development">Business development</option>
+                    <option value="Decarbonisation roadmaps">Decarbonisation roadmaps</option>
+                    <option value="Events">Events</option>
+                    <option value="MEA Market Entry">MEA Market Entry</option>
+                </select>
+            </div>
+
             <label
-                htmlFor="fullname"
-                className="text-gray-500 font-light mt-8 dark:text-gray-50"
+                htmlFor="tellUsMore"
+                className="text-gray-500 font-light mt-4 mb-4 dark:text-gray-50"
             >
-                Full name<span className="text-red-500 dark:text-gray-50">*</span>
-            </label>
-            <input
-                type="text"
-                value={fullname}
-                onChange={(e) => {
-                    setFullname(e.target.value);
-                }}
-                name="fullname"
-                className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
-            />
-
-
-            <label
-                htmlFor="email"
-                className="text-gray-500 font-light mt-4 dark:text-gray-50"
-            >
-                E-mail<span className="text-red-500">*</span>
-            </label>
-            <input
-                type="email"
-                name="email"
-                value={email}
-                onChange={(e) => {
-                    setEmail(e.target.value);
-                }}
-                className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
-            />
-
-
-            <label
-                htmlFor="subject"
-                className="text-gray-500 font-light mt-4 dark:text-gray-50"
-            >
-                Subject<span className="text-red-500">*</span>
-            </label>
-            <input
-                type="text"
-                name="subject"
-                value={subject}
-                onChange={(e) => {
-                    setSubject(e.target.value);
-                }}
-                className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
-            />
-
-            <label
-                htmlFor="message"
-                className="text-gray-500 font-light mt-4 dark:text-gray-50"
-            >
-                Message<span className="text-red-500">*</span>
+                Tell us more:
             </label>
             <textarea
-                name="message"
+                name="tellUsMore"
                 value={message}
                 onChange={(e) => {
                     setMessage(e.target.value);
                 }}
-                className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+                rows="2"
+                className="w-full bg-white rounded-md py-2 pl-4 mb-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500 resize-vertical"
             ></textarea>
 
+
+            <label htmlFor="helpType" className="text-gray-500 font-light mb-4 dark:text-gray-50">
+                Upload your pitch deck, company presentation, or brochure: <a href="#" className="underline font-semibold">here</a>
+            </label>
             <button
                 type="submit"
-                className="px-10 mt-8 py-2 bg-[var(--white)] text-[var(--green)] rounded-md text-lg border-[var(--green)] border-2 hover:bg-[var(--green)] hover:text-[var(--white)] transition-all duration-300 ease-in-out]">
+                className="px-10 mt-8 py-2 bg-[var(--white)] text-[var(--green)] rounded-md text-lg border-[var(--green)] border-2 hover:bg-[var(--green)] hover:text-[var(--white)] transition-all duration-300 ease-in-out]"
+            >
                 Submit
             </button>
 
+
         </form>
-    )
+    );
 }
