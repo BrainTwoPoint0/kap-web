@@ -38,7 +38,7 @@ export default function About() {
                 </div>
             </div>
             <div className="bg-[var(--white)] text-[var(--green)] p-20">
-                <h1 className="text-4xl">
+                <h1 className="text-2xl md:text-4xl">
                     <span className="font-bold ">We aspire to:</span>{" "}
                     {aspiration}
                 </h1>
