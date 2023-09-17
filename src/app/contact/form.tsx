@@ -1,6 +1,5 @@
 "use client"
 import React, { useState } from 'react';
-
 export default function Form() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -149,7 +148,8 @@ export default function Form() {
                 onChange={(e) => {
                     setMessage(e.target.value);
                 }}
-                rows="2"
+                rows={2}
+                // rows="2"
                 className="w-full bg-white rounded-md py-2 pl-4 mb-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500 resize-vertical"
             ></textarea>
 
@@ -165,6 +165,6 @@ export default function Form() {
             </button>
 
 
-        </form>
+        </form >
     );
 }

@@ -15,7 +15,7 @@ export default function Services() {
         { 'title': 'Crafting Exceptional and Sustainable Events', 'description': "Immerse your attendees in extraordinary corporate events, exhibitions, round tables, and networking experiences that not only leave a lasting impression but also embrace sustainability. At Kantar Advisory Partners (KAP), we specialize in curating exceptional and sustainable events that resonate with your audience and align with your corporate objectives. \nFrom concept to execution, KAP brings a wealth of expertise in event management to elevate your gatherings to new heights. We work closely with you to understand your vision, objectives, and target audience, allowing us to design bespoke experiences that captivate and engage. We leverage our network of industry experts, renowned speakers, and influential stakeholders to curate engaging round tables, insightful panel discussions, and dynamic networking opportunities that foster meaningful connections and drive collaboration. \nElevate your corporate events with KAP's expertise to create impact ful exhibitions, thought-provoking round tables, and engaging networking events that enhance your brand reputation and contribute to a more sustainable future.", 'image': '/services4.png' },
         { 'title': 'Decarbonisation Roadmaps: Expert Guidance on the Path to a Sustainable Future', 'description': "Navigate your organization's journey towards decarbonisation with the expert guidance of Kantar Advisory Partners (KAP). We are committed to helping companies and governments develop and implement robust decarbonisation roadmaps that align with sustainability goals. \nDecarbonisation is a critical priority for companies and governments worldwide, driven by the urgent need to mitigate the impacts of climate change. With our deep industry knowledge and expertise, we assist in crafting tailored decarbonisation roadmaps that encompass both short-term and long-term objectives. We take into account the unique circumstances and goals of your organization, providing practical and innovative solutions that prioritize sustainability while maintaining operational ef ficiency. \nEmbark on your decarbonisation journey with KAP and empower your organization to make a meaningful impact. Let us guide you in developing and implementing robust decarbonisation roadmaps that align with your vision and values. Together, we can forge a path towards a sustainable future that benefits your organization, society, and the planet.", 'image': '/services5.png' }
     ]
-    const openModal = (service) => {
+    const openModal = (service: React.SetStateAction<{ title: string; description: string; image: string; }>) => {
         setModalContent(service);
         setIsModalOpen(true);
     }
@@ -24,7 +24,7 @@ export default function Services() {
         setIsModalOpen(false);
     }
 
-    const switchService = (direction) => {
+    const switchService = (direction: string) => {
         let currentIndex = services.findIndex(service => service.title === modalContent.title);
         if (direction === 'left') {
             currentIndex = currentIndex === 0 ? services.length - 1 : currentIndex - 1;
