@@ -7,7 +7,7 @@ export default function OurServices() {
     return (
         <div>
             <div className="bg-services">
-                <h1 className="text-[var(--white)] backdrop-brightness-75 text-5xl font-bold text-center p-24">Tailored Solutions:<br />Ensuring Client and Partner Success</h1>
+                <h1 className="text-[var(--white)] backdrop-brightness-75 text-3xl md:text-5xl font-bold text-center p-8 md:p-24">Tailored Solutions:<br />Ensuring Client and Partner Success</h1>
                 <Services />
             </div>
             <Clients />
