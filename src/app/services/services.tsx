@@ -38,7 +38,7 @@ export default function Services() {
             <h1 className="text-4xl font-bold">Our Services</h1>
             <br />
             <br />
-            <div className="flex flex-wrap space-x-8">
+            <div className="flex flex-wrap">
                 {services.map((service, index) => {
                     return (
                         <div className="w-64 h-36 rounded-md outline outline-offset-2 outline-[var(--green)] flex justify-center items-center bg-black m-4"
