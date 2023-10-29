@@ -6,7 +6,7 @@ export default function IndustryCoverage() {
     ]
     return (
         <section className="bg-[var(--dark-grey)] text-[var(--white)] backdrop-brightness-50 flex flex-col items-center p-8">
-            <h1 className="text-4xl font-bold">Our Services</h1>
+            <h1 className="text-4xl font-bold">Industry Coverage</h1>
 
             <div className="flex flex-wrap justify-center mt-12">
                 {coverage.map((service, index) => {
