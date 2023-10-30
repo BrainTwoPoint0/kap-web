@@ -9,12 +9,11 @@ export default function IndustryCoverage() {
             <h1 className="text-4xl font-bold">Industry Coverage</h1>
 
             <div className="flex flex-wrap justify-center mt-12">
-                {coverage.map((service, index) => {
+                {coverage.map((coverageItem, index) => {
                     return (
-                        <div className="w-28 h-20 md:w-64 md:h-36 rounded-md outline outline-offset-2 outline-[var(--green)] flex justify-center items-center bg-black m-4"
-
+                        <div className="w-48 h-20 md:w-64 md:h-36 rounded-md outline outline-offset-2 outline-[var(--green)] flex justify-center items-center bg-black m-4"
                             key={index}>
-                            <p className="text-center md:text-lg text-xs">{service}</p>
+                            <p className="text-center md:text-xl text-md">{coverageItem}</p>
                         </div>
                     );
                 })}
