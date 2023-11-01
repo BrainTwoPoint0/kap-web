@@ -37,7 +37,7 @@ export default function Map() {
                     </div>
                 </div>
             </div>
-            <img alt="KAP Network Map" src="/map.svg" className="md:w-1/2 md:relative absolute w-full mt-28" />
+            <img alt="KAP Network Map" src="/map.svg" className="md:w-1/2 md:relative absolute w-full mt-28 md:mt-0" />
         </div>
     )
 }
