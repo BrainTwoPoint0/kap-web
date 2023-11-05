@@ -24,7 +24,7 @@ export default function Events() {
             <div className="flex flex-wrap justify-center">
                 <div className="md:hidden flex my-4">
 
-                    <button onClick={prevSlide} className="text-[var(--white)] text-3xl p-6">
+                    <button onClick={prevSlide} className="text-[var(--white)] text-3xl mr-4">
                         &lt;
                     </button>
 
@@ -37,7 +37,7 @@ export default function Events() {
                         </div>
                     </a>
 
-                    <button onClick={nextSlide} className="text-[var(--white)] text-3xl p-6">
+                    <button onClick={nextSlide} className="text-[var(--white)] text-3xl ml-4">
                         &gt;
                     </button>
                 </div>

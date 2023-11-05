@@ -25,7 +25,7 @@ export default function Services() {
             <div className="flex flex-wrap justify-center">
                 <div className="md:hidden flex">
 
-                    <button onClick={prevSlide} className="text-[var(--white)] text-3xl p-6">
+                    <button onClick={prevSlide} className="text-[var(--white)] text-3xl mr-6">
                         &lt;
                     </button>
                     <div className="transition-all duration-300 w-64 h-36 m-4 max-w-md mx-auto rounded-md bg-black outline outline-offset-0 outline-green-500 flex flex-col items-center justify-center p-4">
@@ -33,7 +33,7 @@ export default function Services() {
                     </div>
 
 
-                    <button onClick={nextSlide} className="text-[var(--white)] text-3xl p-6">
+                    <button onClick={nextSlide} className="text-[var(--white)] text-3xl ml-6">
                         &gt;
                     </button>
                 </div>
