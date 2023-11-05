@@ -23,9 +23,9 @@ export default function Services() {
         <section className=" text-[var(--white)] backdrop-brightness-50 flex flex-col items-center p-4 md:p-8">
             <h1 className="text-2xl md:text-4xl font-bold md:mb-8">Our Services</h1>
             <div className="flex flex-wrap justify-center">
-                <div className="md:hidden">
+                <div className="md:hidden flex">
 
-                    <button onClick={prevSlide} className="absolute left-2 z-10 p-2 text-[var(--white)] top-1/2 transform -translate-y-1/2 text-3xl">
+                    <button onClick={prevSlide} className="text-[var(--white)] text-3xl p-6">
                         &lt;
                     </button>
                     <div className="transition-all duration-300 w-64 h-36 m-4 max-w-md mx-auto rounded-md bg-black outline outline-offset-0 outline-green-500 flex flex-col items-center justify-center p-4">
@@ -33,7 +33,7 @@ export default function Services() {
                     </div>
 
 
-                    <button onClick={nextSlide} className="absolute right-2 z-10 p-2 text-[var(--white)] top-1/2 transform -translate-y-1/2 text-3xl">
+                    <button onClick={nextSlide} className="text-[var(--white)] text-3xl p-6">
                         &gt;
                     </button>
                 </div>
