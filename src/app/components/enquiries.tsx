@@ -17,8 +17,8 @@ export default function Enquiries() {
 
                 <div className="flex flex-col justify-center items-center md:w-1/2">
                     <h3 className="text-lg md:text-2xl font-bold">For Enquiries and Consultancy</h3>
-                    <br />
-                    <p className="text-center"><a href="mailto:mkantar@kantaradvisory.com">mkantar@kantaradvisory.com</a><br /><a href={'tel:+447402424664'}>+44 (0) 740 2424 664</a></p>
+
+                    <p className="text-center mt-2"><a href="mailto:mkantar@kantaradvisory.com">mkantar@kantaradvisory.com</a><br /><a href={'tel:+447402424664'}>+44 (0) 740 2424 664</a></p>
                 </div>
             </div>
         </section>
