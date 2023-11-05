@@ -12,7 +12,7 @@ export default function Enquiries() {
                     <p><span className="font-bold">Impact Investors:</span> Get in touch for impactful opportunities.</p>
 
                     <p><span className="font-bold">UK Businesses:</span> Learn more about how we can support with MEA Market Entry and Expansion.</p>
-                    <button className="bg-[var(--white)] text-[var(--green)] rounded-lg p-3 md:w-1/2 font-bold">Send an Enquiry</button>
+                    <a href="/contact" className="bg-[var(--white)] text-[var(--green)] rounded-lg p-3 md:w-1/2 font-bold text-center">Send an Enquiry</a>
                 </div>
 
                 <div className="flex flex-col justify-center items-center md:w-1/2">
