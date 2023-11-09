@@ -15,7 +15,7 @@ export default function Navbar() {
     }
 
     return (
-        <nav className="relative flex flex-row bg-[var(--white)] text-[var(--black)] justify-between py-4 px-10 items-center">
+        <nav className="relative flex flex-row bg-[var(--white)] text-[var(--black)] justify-between p-4 md:py-4 md:px-10 items-center">
             <div className="md:hidden flex items-center" onClick={toggleDropdown}>
                 <span className="text-3xl cursor-pointer">☰</span>
 
