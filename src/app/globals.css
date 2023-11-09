@@ -9,6 +9,11 @@
   --white: #FFFFFF;
 }
 
+body {
+  background-color: var(--dark-grey);
+  color: var(--white);
+}
+
 .bg-contact {
   background-image: url('../../public/contact.png');
   background-repeat: no-repeat;
