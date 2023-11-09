@@ -1,8 +1,19 @@
 "use client"
 import Image from 'next/image'
 import React, { useState } from 'react'
-export default function Services() {
 
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
+
+export default function Services() {
+    const customStyles = {
+        content: {
+
+            overflow: 'scroll',
+        },
+
+    };
     const [modalContent, setModalContent] = useState({ title: "", description: "", image: "" });
     const [isModalOpen, setIsModalOpen] = useState(false);
     const openModal = (service: React.SetStateAction<{ title: string; description: string; image: string; }>) => {
@@ -56,7 +67,7 @@ export default function Services() {
                     <button onClick={prevSlide} className="text-[var(--white)] text-3xl mr-6">
                         &lt;
                     </button>
-                    <div className="transition-all duration-300 w-64 h-36 m-4 max-w-md mx-auto rounded-md bg-black outline outline-offset-0 outline-green-500 flex flex-col items-center justify-center p-4">
+                    <div onClick={() => openModal(services[activeIndex])} className="transition-all duration-300 w-64 h-36 m-4 max-w-md mx-auto rounded-md bg-black outline outline-offset-0 outline-green-500 flex flex-col items-center justify-center p-4">
                         <p className="text-center text-lg">{services[activeIndex].title}</p>
                     </div>
 
@@ -73,28 +84,33 @@ export default function Services() {
                         </div>
                     );
                 })}
-
-                {isModalOpen &&
+                <Modal
+                    isOpen={isModalOpen}
+                    onRequestClose={closeModal}
+                    style={customStyles}
+                    contentLabel="Service Modal"
+                >
                     <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-90 z-50 flex justify-center items-center">
                         <div className="fixed top-4 left-4">
                             <button className="text-white bg-transparent text-2xl border-none opacity-90" onClick={closeModal}>X</button>
                         </div>
-                        <div className="fixed left-3 top-1/2 transform -translate-y-1/2 text-5xl">
+                        <div className="fixed left-3 top-1/2 transform -translate-y-1/2 text-3xl md:text-5xl">
                             <button onClick={() => switchService('left')}>&lt;</button>
                         </div>
-                        <div className="fixed right-3 top-1/2 transform -translate-y-1/2 text-5xl">
+                        <div className="fixed right-3 top-1/2 transform -translate-y-1/2 text-3xl md:text-5xl">
                             <button onClick={() => switchService('right')}>&gt;</button>
                         </div>
                         <div className="text-center flex flex-col items-center w-2/3 ">
-                            <Image alt="MBBC Logo" src={modalContent.image} height={150} width={150} />
-                            <h2 className="text-4xl font-bold mb-4 text-white">{modalContent.title}</h2>
-                            <p className="text-xl text-white h-1/2">{modalContent.description.split('\n').map((item, key) => {
+                            <Image alt="MBBC Logo" src={modalContent.image} height={120} width={120} className="w-14 h-14 md:w-32 md:h-32 " />
+                            <h2 className="text-base md:text-3xl font-bold mb-4 text-white">{modalContent.title}</h2>
+                            <p className="text-xs md:text-lg text-white h-1/2">{modalContent.description.split('\n').map((item, key) => {
                                 return <span key={key}>{item}<br /><br /></span>
                             })}
                             </p>
                         </div>
                     </div>
-                }
+                </Modal>
+
             </div>
         </section>
     )
