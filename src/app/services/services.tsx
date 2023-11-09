@@ -1,6 +1,34 @@
 "use client"
+import Image from 'next/image'
 import React, { useState } from 'react'
 export default function Services() {
+
+    const [modalContent, setModalContent] = useState({ title: "", description: "", image: "" });
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const openModal = (service: React.SetStateAction<{ title: string; description: string; image: string; }>) => {
+        setModalContent(service);
+        setIsModalOpen(true);
+        // Disable scrolling on body
+        document.body.style.overflow = 'hidden';
+    }
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        // Enable scrolling on body
+        document.body.style.overflow = 'visible';
+    }
+
+    const switchService = (direction: string) => {
+        let currentIndex = services.findIndex(service => service.title === modalContent.title);
+        if (direction === 'left') {
+            currentIndex = currentIndex === 0 ? services.length - 1 : currentIndex - 1;
+        } else {
+            currentIndex = currentIndex === services.length - 1 ? 0 : currentIndex + 1;
+        }
+        openModal(services[currentIndex]);
+    }
+
+
 
     const [activeIndex, setActiveIndex] = React.useState(0);
     const nextSlide = () => {
@@ -18,9 +46,9 @@ export default function Services() {
         { 'title': 'Crafting Exceptional and Sustainable Events', 'description': "Immerse your attendees in extraordinary corporate events, exhibitions, round tables, and networking experiences that not only leave a lasting impression but also embrace sustainability. At Kantar Advisory Partners (KAP), we specialize in curating exceptional and sustainable events that resonate with your audience and align with your corporate objectives. \nFrom concept to execution, KAP brings a wealth of expertise in event management to elevate your gatherings to new heights. We work closely with you to understand your vision, objectives, and target audience, allowing us to design bespoke experiences that captivate and engage. We leverage our network of industry experts, renowned speakers, and influential stakeholders to curate engaging round tables, insightful panel discussions, and dynamic networking opportunities that foster meaningful connections and drive collaboration. \nElevate your corporate events with KAP's expertise to create impact ful exhibitions, thought-provoking round tables, and engaging networking events that enhance your brand reputation and contribute to a more sustainable future.", 'image': '/services4.png' },
         { 'title': 'Decarbonisation Roadmaps: Expert Guidance on the Path to a Sustainable Future', 'description': "Navigate your organization's journey towards decarbonisation with the expert guidance of Kantar Advisory Partners (KAP). We are committed to helping companies and governments develop and implement robust decarbonisation roadmaps that align with sustainability goals. \nDecarbonisation is a critical priority for companies and governments worldwide, driven by the urgent need to mitigate the impacts of climate change. With our deep industry knowledge and expertise, we assist in crafting tailored decarbonisation roadmaps that encompass both short-term and long-term objectives. We take into account the unique circumstances and goals of your organization, providing practical and innovative solutions that prioritize sustainability while maintaining operational ef ficiency. \nEmbark on your decarbonisation journey with KAP and empower your organization to make a meaningful impact. Let us guide you in developing and implementing robust decarbonisation roadmaps that align with your vision and values. Together, we can forge a path towards a sustainable future that benefits your organization, society, and the planet.", 'image': '/services5.png' }
     ]
-
     return (
         <section className=" text-[var(--white)] backdrop-brightness-50 flex flex-col items-center p-4 md:p-8">
+
             <h1 className="text-2xl md:text-4xl font-bold md:mb-8">Our Services</h1>
             <div className="flex flex-wrap justify-center">
                 <div className="md:hidden flex">
@@ -39,12 +67,34 @@ export default function Services() {
                 </div>
                 {services.map((service, index) => {
                     return (
-                        <div className="w-64 h-36 rounded-md outline outline-offset-2 outline-[var(--green)]  justify-center items-center bg-black m-4 hidden md:flex"
+                        <div onClick={() => openModal(service)} className="w-64 h-36 rounded-md outline outline-offset-2 outline-[var(--green)]  justify-center items-center bg-black m-4 hidden md:flex"
                             key={index}>
                             <p className="text-center text-lg">{service.title}</p>
                         </div>
                     );
                 })}
+
+                {isModalOpen &&
+                    <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-90 z-50 flex justify-center items-center">
+                        <div className="fixed top-4 left-4">
+                            <button className="text-white bg-transparent text-2xl border-none opacity-90" onClick={closeModal}>X</button>
+                        </div>
+                        <div className="fixed left-3 top-1/2 transform -translate-y-1/2 text-5xl">
+                            <button onClick={() => switchService('left')}>&lt;</button>
+                        </div>
+                        <div className="fixed right-3 top-1/2 transform -translate-y-1/2 text-5xl">
+                            <button onClick={() => switchService('right')}>&gt;</button>
+                        </div>
+                        <div className="text-center flex flex-col items-center w-2/3 ">
+                            <Image alt="MBBC Logo" src={modalContent.image} height={100} width={100} />
+                            <h2 className="text-3xl font-bold mb-4 text-white">{modalContent.title}</h2>
+                            <p className="text-base text-white h-1/2">{modalContent.description.split('\n').map((item, key) => {
+                                return <span key={key}>{item}<br /><br /></span>
+                            })}
+                            </p>
+                        </div>
+                    </div>
+                }
             </div>
         </section>
     )
