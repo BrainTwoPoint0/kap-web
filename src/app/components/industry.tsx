@@ -18,7 +18,7 @@ export default function IndustryCoverage() {
                     );
                 })}
             </div>
-            <button className="md:mt-12 mt-4 bg-[var(--green)] text-[var(--white)] rounded-lg p-3 w-64 font-bold">Find Out More</button>
+            <a href="/services" className="text-center md:mt-12 mt-4 bg-[var(--green)] text-[var(--white)] rounded-lg p-3 w-64 font-bold">Find Out More</a>
 
         </section>
     )
