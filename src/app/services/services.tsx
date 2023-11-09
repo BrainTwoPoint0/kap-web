@@ -86,9 +86,9 @@ export default function Services() {
                             <button onClick={() => switchService('right')}>&gt;</button>
                         </div>
                         <div className="text-center flex flex-col items-center w-2/3 ">
-                            <Image alt="MBBC Logo" src={modalContent.image} height={100} width={100} />
-                            <h2 className="text-3xl font-bold mb-4 text-white">{modalContent.title}</h2>
-                            <p className="text-base text-white h-1/2">{modalContent.description.split('\n').map((item, key) => {
+                            <Image alt="MBBC Logo" src={modalContent.image} height={150} width={150} />
+                            <h2 className="text-4xl font-bold mb-4 text-white">{modalContent.title}</h2>
+                            <p className="text-xl text-white h-1/2">{modalContent.description.split('\n').map((item, key) => {
                                 return <span key={key}>{item}<br /><br /></span>
                             })}
                             </p>
