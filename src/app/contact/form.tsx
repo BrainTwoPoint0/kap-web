@@ -1,23 +1,26 @@
 import React from 'react';
 export default function Form() {
-
-
     return (
         <section>
-            <form name="contact" method="POST" data-netlify="true">
-                <p>
-                    <label>Your Name: <input type="text" name="name" /></label>
-                </p>
-                <p>
-                    <label>Your Email: <input type="email" name="email" /></label>
-                </p>
-
-                <p>
-                    <label>Message: <textarea name="message"></textarea></label>
-                </p>
-                <p>
-                    <button type="submit">Send</button>
-                </p>
+            <form
+                name="contact-form"
+                method="POST"
+                action="contact/?success=true"
+            >
+                <label htmlFor="name">Name *</label>
+                <input
+                    id="name"
+                    name="name"
+                    required
+                    type="text"
+                />
+                <label htmlFor="company">Company *</label>
+                <input id="company" name="company" required type="text" />
+                <label htmlFor="email">E-mail Address *</label>
+                <input id="email" type="email" name="email" required />
+                <label htmlFor="message">Message *</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Submit</button>
             </form>
 
         </section>
