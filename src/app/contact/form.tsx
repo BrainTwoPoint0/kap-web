@@ -11,7 +11,7 @@ export default function Form() {
     const [message, setMessage] = useState('');
 
     return (
-        <form className="flex flex-col">
+        <form className="flex flex-col" data-netlify="true" method="POST">
             <h1 className="text-2xl font-bold text-[var(--green)] text-center md:text-5xl">
                 Get In Touch With Us
             </h1>
