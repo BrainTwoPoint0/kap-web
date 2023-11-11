@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 export default function Form() {
     return (
-        <form className="flex flex-col" data-netlify="true" name="contact" method="POST">
+        <form className="flex flex-col" data-netlify="true" name="contact" method="POST" action="/">
 
 
             <div className="flex flex-col md:flex-row justify-between mt-8 space-y-4 md:space-y-0 md:space-x-4">
@@ -16,7 +16,6 @@ export default function Form() {
                     <input
                         required
                         type="text"
-                        id="name"
                         name="firstName"
                         className="w-full bg-white rounded-md py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
                     />
@@ -87,7 +86,6 @@ export default function Form() {
                         Telephone Number (optional)
                     </label>
                     <input
-                        required
                         type="text"
                         name="telephone"
                         className="w-full bg-white rounded-md py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
