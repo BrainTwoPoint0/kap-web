@@ -4,6 +4,9 @@ import Form from './form'
 export default function ContactUs() {
     return (
         <section className="bg-contact flex flex-col items-center p-9 md:p-24 justify-center min-h-screen">
+            <h1 className="text-2xl font-bold text-[var(--green)] text-center md:text-5xl">
+                Get In Touch With Us
+            </h1>
             <Form />
         </section>
     )

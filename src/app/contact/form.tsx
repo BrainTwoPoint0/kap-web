@@ -1,20 +1,9 @@
 "use client"
 import React, { useState } from 'react';
 export default function Form() {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [companyName, setCompanyName] = useState('');
-    const [companyWebsite, setCompanyWebsite] = useState('');
-    const [email, setEmail] = useState('');
-    const [telephone, setTelephone] = useState('');
-    const [helpType, setHelpType] = useState('');
-    const [message, setMessage] = useState('');
-
     return (
-        <form className="flex flex-col">
-            <h1 className="text-2xl font-bold text-[var(--green)] text-center md:text-5xl">
-                Get In Touch With Us
-            </h1>
+        <form className="flex flex-col" data-netlify="true" name="contact" method="POST">
+
 
             <div className="flex flex-col md:flex-row justify-between mt-8 space-y-4 md:space-y-0 md:space-x-4">
                 <div className="w-full md:w-1/2">
@@ -25,11 +14,9 @@ export default function Form() {
                         First Name
                     </label>
                     <input
+                        required
                         type="text"
-                        value={firstName}
-                        onChange={(e) => {
-                            setFirstName(e.target.value);
-                        }}
+                        id="name"
                         name="firstName"
                         className="w-full bg-white rounded-md py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
                     />
@@ -43,11 +30,8 @@ export default function Form() {
                         Last Name
                     </label>
                     <input
+                        required
                         type="text"
-                        value={lastName}
-                        onChange={(e) => {
-                            setLastName(e.target.value);
-                        }}
                         name="lastName"
                         className="w-full bg-white rounded-md py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
                     />
@@ -63,9 +47,8 @@ export default function Form() {
                         Company Name
                     </label>
                     <input
+                        required
                         type="text"
-                        value={companyName}
-                        onChange={(e) => setCompanyName(e.target.value)}
                         name="companyName"
                         className="w-full bg-white rounded-md py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
                     />
@@ -78,8 +61,6 @@ export default function Form() {
                     </label>
                     <input
                         type="url"
-                        value={companyWebsite}
-                        onChange={(e) => setCompanyWebsite(e.target.value)}
                         name="companyWebsite"
                         className="w-full bg-white rounded-md py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
                     />
@@ -93,9 +74,8 @@ export default function Form() {
                         E-Mail Address
                     </label>
                     <input
-                        type="text"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                        type="email"
                         name="email"
                         className="w-full bg-white rounded-md py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
                     />
@@ -107,9 +87,8 @@ export default function Form() {
                         Telephone Number (optional)
                     </label>
                     <input
-                        type="url"
-                        value={telephone}
-                        onChange={(e) => setTelephone(e.target.value)}
+                        required
+                        type="text"
                         name="telephone"
                         className="w-full bg-white rounded-md py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
                     />
@@ -122,8 +101,7 @@ export default function Form() {
                     How can we help?
                 </label>
                 <select
-                    value={helpType}
-                    onChange={(e) => setHelpType(e.target.value)}
+                    required
                     name="helpType"
                     className="w-full h-10 bg-white rounded-md py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
                 >
@@ -144,18 +122,13 @@ export default function Form() {
             </label>
             <textarea
                 name="tellUsMore"
-                value={message}
-                onChange={(e) => {
-                    setMessage(e.target.value);
-                }}
                 rows={2}
-                // rows="2"
                 className="w-full bg-white rounded-md py-2 pl-4 mb-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500 resize-vertical"
             ></textarea>
 
 
             <label htmlFor="helpType" className="text-gray-500 font-light mb-4 dark:text-gray-50">
-                Upload your pitch deck, company presentation, or brochure: <a href="#" className="underline font-semibold">here</a>
+                Upload your pitch deck, company presentation, or brochure: <input type="file" name="uploadedFile" className="underline font-semibold" />
             </label>
             <button
                 type="submit"
