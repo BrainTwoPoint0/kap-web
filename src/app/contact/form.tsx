@@ -5,8 +5,8 @@ export default function Form() {
         <form className="flex flex-col w-11/12" data-netlify="true" name="contact" method="POST" action="/">
 
 
+            <input type="hidden" name="form-name" value="contact" />
             <div className="flex flex-col md:flex-row justify-between mt-4 space-y-4 md:space-y-0 md:space-x-4">
-                <input type="hidden" name="form-name" value="contact" />
 
                 <div className="w-full md:w-1/2">
                     <label
