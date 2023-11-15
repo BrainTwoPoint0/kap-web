@@ -21,6 +21,9 @@ export default function Clients() {
                 <img className="h-10 w-20 md:h-11 md:w-24" alt="Cambridge Cleantech Logo" src=" /Cambridge-Cleantech-logo.png" />
                 <img className="h-14 w-14 md:h-20 md:w-20" alt="OXFORD CLEANTECH Logo" src=" /OXFORD-CLEANTECH-LOGO.png" />
                 <img className="h-10 w-16 md:h-14 md:w-24" alt="SEC Logo" src=" /SEC-Logo.png" />
+                <img className="h-10 w-16 md:h-14 md:w-24" alt="Sustainable Logo" src=" /sustainable.png" />
+                <img className="h-10 w-16 md:h-14 md:w-24" alt="Kezad Logo" src=" /kezad.png" />
+                <img className="h-10 w-16 md:h-14 md:w-14" alt="IE Logo" src=" /improvedenergy.png" />
 
             </div >
         </section >
