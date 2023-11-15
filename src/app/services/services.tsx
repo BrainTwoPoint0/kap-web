@@ -89,7 +89,7 @@ export default function Services() {
                     style={customStyles}
                     contentLabel="Service Modal"
                 >
-                    <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-90 z-50 flex justify-center">
+                    <div className="fixed top-0 left-0 w-screen h-full bg-black bg-opacity-90 z-50 flex flex-col items-center justify-center">
                         <div className="fixed top-4 left-4">
                             <button className="text-white bg-transparent text-2xl border-none opacity-90" onClick={closeModal}>X</button>
                         </div>
@@ -99,10 +99,10 @@ export default function Services() {
                         <div className="fixed right-3 top-1/2 transform -translate-y-1/2 text-3xl md:text-5xl">
                             <button onClick={() => switchService('right')}>&gt;</button>
                         </div>
-                        <div className="text-center flex flex-col items-center w-2/3 mt-14 md:mt-32">
-                            <Image alt="MBBC Logo" src={modalContent.image} height={120} width={120} className="w-14 h-14 md:w-32 md:h-32 " />
-                            <h2 className="text-xs md:text-3xl font-bold mb-4 text-white">{modalContent.title}</h2>
-                            <p className="text-[10px] md:text-lg text-white h-1/2">{modalContent.description.split('\n').map((item, key) => {
+                        <div className="text-center flex flex-col items-center w-2/3 ">
+                            <Image alt="MBBC Logo" src={modalContent.image} height={120} width={120} className="w-14 h-14 md:w-28 md:h-28 " />
+                            <h2 className="text-xs md:text-2xl font-bold mb-4 text-white">{modalContent.title}</h2>
+                            <p className="text-[10px] md:text-base text-white h-1/2">{modalContent.description.split('\n').map((item, key) => {
                                 return <span key={key}>{item}<br /><br /></span>
                             })}
                             </p>
