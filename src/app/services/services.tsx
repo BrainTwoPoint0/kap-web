@@ -77,7 +77,7 @@ export default function Services() {
                 </div>
                 {services.map((service, index) => {
                     return (
-                        <div onClick={() => openModal(service)} className="w-64 h-36 rounded-md outline outline-offset-2 outline-[var(--green)]  justify-center items-center bg-black m-4 hidden md:flex"
+                        <div onClick={() => openModal(service)} className="w-64 h-36 cursor-pointer rounded-md outline outline-offset-2 outline-[var(--green)]  justify-center items-center bg-black m-4 hidden md:flex"
                             key={index}>
                             <p className="text-center text-lg">{service.title}</p>
                         </div>
