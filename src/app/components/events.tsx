@@ -5,7 +5,7 @@ export default function Events() {
 
     const events = [
         { id: "1", location: "QEII Conference Centre", date: "6-7 November 2023", description: "The go-to-event for food security & sustainability", link: "https://sustainablefoodsevent.com", image: "/SFL.png" },
-        { id: "2", location: "Hilton London Metropole", date: "30 November 2023", description: "3rd Arab British Economic Summit", link: "https://abcc.glueup.com/event/68972/register/", image: "/arabbritishsummit.jpeg" },
+        { id: "2", location: "Hilton London Metropole", date: "20 November 2023", description: "3rd Arab British Economic Summit", link: "https://abcc.glueup.com/event/68972/register/", image: "/arabbritishsummit.jpeg" },
         { id: "3", location: "London Olympia", date: "24-25 May 2024", description: "The International Climate & Clean Tech Congress", link: "https://www.innovationzero.com", image: "/innovationzerologo.png" },
     ]
 
