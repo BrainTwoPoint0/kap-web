@@ -9,8 +9,8 @@ export default function Map() {
                 <h3 className="font-bold text-2xl md:text-4xl text-[var(--white)] text-center">Our Network</h3>
                 <div className="flex md:flex-col">
                     <div>
-                        <h4 className="text-[var(--green)] font-bold mt-6">Europe</h4>
-                        <p className="">U.K.</p>
+
+                        <p className="text-[var(--green)] font-bold mt-6">U.K.</p>
                         <h4 className="text-[var(--green)] font-bold mt-6">Middle-East</h4>
                         <p className="">Lebanon</p>
                         <p className="">U.A.E.</p>
