@@ -31,7 +31,7 @@ body {
 }
 
 .bg-about {
-  background-image: url('../../public/about-bg.png');
+  background-image: url('../../public/aboutus.tiff');
   background-repeat: no-repeat;
   background-size: cover;
   /* Or 'contain' if you want to see the entire image */
@@ -40,7 +40,7 @@ body {
 
 
 .bg-services {
-  background-image: url('../../public/services-bg.png');
+  background-image: url('../../public/servicesbg.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   /* Or 'contain' if you want to see the entire image */
