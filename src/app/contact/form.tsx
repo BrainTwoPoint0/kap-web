@@ -2,9 +2,13 @@
 import React, { useState } from 'react';
 export default function Form() {
     return (
-        <form className="flex flex-col w-11/12" data-netlify="true" name="contact" method="POST" action="/">
+        <form className="flex flex-col w-11/12" data-netlify="true" netlify-honeypot="bot-field" name="contact" method="POST" action="/">
 
-
+            <p className="hidden">
+                <label>
+                    Don&rsquo;t fill this out if you&rsquo;re human: <input name="bot-field" />
+                </label>
+            </p>
             <input type="hidden" name="form-name" value="contact" />
             <div className="flex flex-col md:flex-row justify-between mt-4 space-y-4 md:space-y-0 md:space-x-4">
 
