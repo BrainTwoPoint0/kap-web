@@ -25,6 +25,7 @@ export default function Clients() {
                 <Image className="h-10 w-16 md:h-12 md:w-24" width={100} height={100} alt="Kezad Logo" src="/kezad.png" />
                 <Image className="h-12 w-12 md:h-14 md:w-14" width={100} height={100} alt="IE Logo" src="/improvedenergy.png" />
                 <Image className="h-12 w-20 md:h-16 md:w-28" width={100} height={100} alt="Innovation Zero Logo" src="/innovationzero-logo.png" />
+                <Image className="h-20 w-20 md:h-16 md:w-28 object-cover" width={100} height={100} alt="BRAIN 2.0 Logo" src="/braintwopoint0-logo.png" />
 
             </div >
         </section >
